@@ -9,9 +9,13 @@
         <div>
         {{menu.item}}
         {{menu.price}}
-            <div class="thumbnail">
-                <img src="{{menu.photo}}" alt="">
-            </div>
+            {% if menu.photo %}
+                <div class="thumbnail">
+                <img src="{{ menu.photo }}" alt="">
+                </div>
+            {% else %}
+                <div class="thumbnail thumbnail-default"></div>
+            {% endif %}
         </div>
     {% endfor %}
 </body>
